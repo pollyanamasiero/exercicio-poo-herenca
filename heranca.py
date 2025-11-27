@@ -6,16 +6,24 @@ class Animal:
         print(f'{self.nome} fez um som genérico')
         
 class Cachorro(Animal):
-    pass
+    def emitir_som(self):
+        print(f'{self.nome} está latindo: au au!')
 
 class Gato(Animal):
-    pass
-
+    def emitir_som(self):
+        print(f'{self.nome} está miando: miau!')
+        
+class Vaca(Animal):
+    def emitir_som(self):
+        print(f'{self.nome} está mugindo: muu!')
 
 
 if __name__ == '__main__':
-    dog = Cachorro('Spike')
-    cat = Gato('Khaleesi')
+    animais = [
+        Cachorro('Spike'),
+        Gato('Khaleesi'),
+        Vaca('Mimosa')
+    ]
     
-    dog.emitir_som()
-    cat.emitir_som()
+    for animal in animais:
+        animal.emitir_som()
